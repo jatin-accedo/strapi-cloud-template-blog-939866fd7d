@@ -1,5 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedColorOnAccent extends Schema.Component {
+  collectionName: 'components_shared_color_on_accents';
+  info: {
+    displayName: 'Color On Accent';
+  };
+  attributes: {
+    color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface SharedColorOnBackground extends Schema.Component {
+  collectionName: 'components_shared_color_on_backgrounds';
+  info: {
+    displayName: 'Color on Background';
+  };
+  attributes: {
+    color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface SharedLogo extends Schema.Component {
   collectionName: 'components_shared_logos';
   info: {
@@ -73,15 +95,28 @@ export interface SharedSlider extends Schema.Component {
   };
 }
 
+export interface SharedTitle extends Schema.Component {
+  collectionName: 'components_shared_titles';
+  info: {
+    displayName: 'title';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required & Attribute.DefaultTo<'Title'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.color-on-accent': SharedColorOnAccent;
+      'shared.color-on-background': SharedColorOnBackground;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.title': SharedTitle;
     }
   }
 }
