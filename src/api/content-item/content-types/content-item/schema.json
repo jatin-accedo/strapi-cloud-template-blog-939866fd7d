@@ -41,7 +41,30 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::container.container",
-      "inversedBy": "Items"
+      "mappedBy": "Items"
+    },
+    "Club": {
+      "type": "enumeration",
+      "enum": [
+        "adelaide_crows",
+        "brisbane",
+        "carlton",
+        "collingwood",
+        "essendon",
+        "fremantle",
+        "geelong",
+        "gold_coast_suns",
+        "gws_giants",
+        "hawthorn",
+        "melbourne",
+        "north_melbourne",
+        "port_adelaide",
+        "richmond",
+        "st_kilda",
+        "sydney_swans",
+        "west_coast_eagles",
+        "western_bulldogs"
+      ]
     }
   }
 }
