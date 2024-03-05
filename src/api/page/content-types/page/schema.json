@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page"
+    "displayName": "Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,15 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.template"
+    },
+    "DisplayText": {
+      "type": "string"
+    },
+    "Containers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::container.container",
+      "inversedBy": "Pages"
     }
   }
 }

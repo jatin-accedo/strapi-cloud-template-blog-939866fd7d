@@ -896,7 +896,17 @@ export interface ApiContainerContainer extends Schema.CollectionType {
     Title: Attribute.String;
     Subtitle: Attribute.String;
     Template: Attribute.Component<'shared.template', true>;
-    Items: Attribute.Component<'shared.item', true>;
+    DisplayText: Attribute.String;
+    Items: Attribute.Relation<
+      'api::container.container',
+      'manyToMany',
+      'api::content-item.content-item'
+    >;
+    Pages: Attribute.Relation<
+      'api::container.container',
+      'manyToMany',
+      'api::page.page'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -921,6 +931,7 @@ export interface ApiContentItemContentItem extends Schema.CollectionType {
     singularName: 'content-item';
     pluralName: 'content-items';
     displayName: 'ContentItem';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -932,6 +943,12 @@ export interface ApiContentItemContentItem extends Schema.CollectionType {
     Image: Attribute.Component<'shared.media', true>;
     Action: Attribute.String;
     ActionData: Attribute.String;
+    DisplayText: Attribute.String;
+    Containers: Attribute.Relation<
+      'api::content-item.content-item',
+      'manyToMany',
+      'api::container.container'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -956,6 +973,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     singularName: 'page';
     pluralName: 'pages';
     displayName: 'Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -963,63 +981,18 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Template: Attribute.Component<'shared.template', true>;
+    DisplayText: Attribute.String;
+    Containers: Attribute.Relation<
+      'api::page.page',
+      'manyToMany',
+      'api::container.container'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiThemeTheme extends Schema.CollectionType {
-  collectionName: 'themes';
-  info: {
-    singularName: 'theme';
-    pluralName: 'themes';
-    displayName: 'Theme';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required;
-    BackgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    AccentColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    Background: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    AltBackground: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    Overlay: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    Accent: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    Error: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    TextPrimary: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    TextAccent: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    Primary: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::theme.theme',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::theme.theme',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1047,7 +1020,6 @@ declare module '@strapi/types' {
       'api::container.container': ApiContainerContainer;
       'api::content-item.content-item': ApiContentItemContentItem;
       'api::page.page': ApiPagePage;
-      'api::theme.theme': ApiThemeTheme;
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content-item",
     "pluralName": "content-items",
-    "displayName": "ContentItem"
+    "displayName": "ContentItem",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,6 +33,15 @@
     },
     "ActionData": {
       "type": "string"
+    },
+    "DisplayText": {
+      "type": "string"
+    },
+    "Containers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::container.container",
+      "inversedBy": "Items"
     }
   }
 }

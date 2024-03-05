@@ -23,10 +23,20 @@
       "repeatable": true,
       "component": "shared.template"
     },
+    "DisplayText": {
+      "type": "string"
+    },
     "Items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.item"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content-item.content-item",
+      "inversedBy": "Containers"
+    },
+    "Pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "mappedBy": "Containers"
     }
   }
 }
