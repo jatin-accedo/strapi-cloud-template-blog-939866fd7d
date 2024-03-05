@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_items",
+  "info": {
+    "singularName": "content-item",
+    "pluralName": "content-items",
+    "displayName": "ContentItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Template": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.template"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media"
+    },
+    "Action": {
+      "type": "string"
+    },
+    "ActionData": {
+      "type": "string"
+    }
+  }
+}

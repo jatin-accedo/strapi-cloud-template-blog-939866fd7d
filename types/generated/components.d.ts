@@ -64,18 +64,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface SharedQuote extends Schema.Component {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    title: Attribute.String;
-    body: Attribute.Text;
-  };
-}
-
 export interface SharedRichText extends Schema.Component {
   collectionName: 'components_shared_rich_texts';
   info: {
@@ -173,16 +161,6 @@ export interface SharedTemplate extends Schema.Component {
   };
 }
 
-export interface SharedTitle extends Schema.Component {
-  collectionName: 'components_shared_titles';
-  info: {
-    displayName: 'title';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.DefaultTo<'Title'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -190,12 +168,10 @@ declare module '@strapi/types' {
       'shared.item': SharedItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
-      'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.template': SharedTemplate;
-      'shared.title': SharedTitle;
     }
   }
 }
