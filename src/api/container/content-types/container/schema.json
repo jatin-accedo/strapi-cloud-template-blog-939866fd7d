@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "containers",
+  "info": {
+    "singularName": "container",
+    "pluralName": "containers",
+    "displayName": "Container",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Template": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.template"
+    },
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.item"
+    }
+  }
+}

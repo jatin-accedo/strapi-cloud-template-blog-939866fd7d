@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_available_ons",
+  "info": {
+    "displayName": "Available on"
+  },
+  "options": {},
+  "attributes": {
+    "AvailableOn": {
+      "type": "enumeration",
+      "enum": [
+        "Android",
+        "Android Phone",
+        "Android Tablet",
+        "AndroidTV",
+        "ATV",
+        "CTV",
+        "iOS",
+        "iPad",
+        "Roku",
+        "tvOS",
+        "Web",
+        "Xbox"
+      ]
+    }
+  }
+}

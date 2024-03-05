@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_items",
+  "info": {
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Template": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.template"
+    },
+    "Action": {
+      "type": "string"
+    },
+    "ActionData": {
+      "type": "string"
+    }
+  }
+}

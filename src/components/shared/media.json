@@ -1,19 +1,26 @@
 {
   "collectionName": "components_shared_media",
   "info": {
-    "displayName": "Media",
-    "icon": "file-video"
+    "displayName": "Image",
+    "icon": "crop",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "AvailableOn": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.available-on"
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Items",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Template": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.template"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Action": {
+      "type": "string"
+    },
+    "ActionData": {
+      "type": "string"
+    }
+  }
+}

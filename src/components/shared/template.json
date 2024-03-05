@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_shared_templates",
+  "info": {
+    "displayName": "Template",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "template": {
+      "type": "enumeration",
+      "enum": [
+        "hero-vertical",
+        "hero-portrait",
+        "promo",
+        "carousel-portrait",
+        "carousel-wide",
+        "carousel-banner",
+        "carousel-link",
+        "grid-portrait",
+        "grid-wide",
+        "grid-banner",
+        "grid-portrait-asym",
+        "grid-wide-asym",
+        "branding",
+        "hero-banner",
+        "grid-wide-loadmore",
+        "grid-portrait-lazyload",
+        "carousel-progress-bar",
+        "grid-portrait-loadmore",
+        "channel-banner",
+        "carousel-wide-3",
+        "carousel-wide-4",
+        "carousel-wide-5",
+        "carousel-wide-6",
+        "carousel-wide-2",
+        "carousel-circle",
+        "elevate-filter-sort",
+        "elevate-continue-watching",
+        "elevate-categories",
+        "elevate-category-carousel",
+        "carousel-landscape",
+        "featured-carousel-portrait",
+        "elevate-hero-banner",
+        "elevate-grid-horizontal-portrait",
+        "elevate-grid-horizontal-wide",
+        "elevate-grid-vertical-portrait",
+        "elevate-grid-vertical-wide",
+        "elevate-carousel-portrait",
+        "elevate-carousel-wide",
+        "elevate-carousel-view-all-portrait",
+        "elevate-carousel-categories",
+        "elevate-horizontal-divider",
+        "elevate-carousel-category-portrait",
+        "elevate-carousel-category-wide"
+      ],
+      "required": true
+    }
+  }
+}
