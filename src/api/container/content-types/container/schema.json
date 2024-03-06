@@ -26,7 +26,7 @@
     "DisplayText": {
       "type": "string"
     },
-    "Items": {
+    "ContentItem": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::content-item.content-item",

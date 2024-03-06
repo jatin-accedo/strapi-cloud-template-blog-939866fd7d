@@ -41,7 +41,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::container.container",
-      "inversedBy": "Items"
+      "mappedBy": "ContentItem"
     }
   }
 }

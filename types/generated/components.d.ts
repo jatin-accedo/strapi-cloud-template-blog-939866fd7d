@@ -4,6 +4,7 @@ export interface SharedAvailableOn extends Schema.Component {
   collectionName: 'components_shared_available_ons';
   info: {
     displayName: 'Available on';
+    description: '';
   };
   attributes: {
     AvailableOn: Attribute.Enumeration<
@@ -21,7 +22,8 @@ export interface SharedAvailableOn extends Schema.Component {
         'Web',
         'Xbox'
       ]
-    >;
+    > &
+      Attribute.DefaultTo<'iOS'>;
   };
 }
 
@@ -112,30 +114,35 @@ export interface SharedTemplate extends Schema.Component {
   attributes: {
     template: Attribute.Enumeration<
       [
-        'default',
-        'epg',
-        'player',
-        'test',
-        'elevate-my-content',
-        'elevate-movie-detail',
-        'marvel',
-        'settings',
-        'live',
         'channel',
-        'elevate-modular-ui',
-        'elevate-show-detail',
-        'elevate-search',
-        'elevate-profile',
-        'elevate-sign-in',
-        'elevate-epg',
-        'elevate-program-detail',
+        'default',
         'elevate-category',
-        'elevate-view-all',
+        'elevate-carousel-wide',
+        'elevate-epg',
+        'elevate-hero-banner',
+        'elevate-info',
+        'elevate-modular-ui',
+        'elevate-movie-detail',
+        'elevate-my-content',
         'elevate-player',
-        'elevate-info'
+        'elevate-profile',
+        'elevate-program-detail',
+        'elevate-search',
+        'elevate-show-detail',
+        'elevate-sign-in',
+        'elevate-view-all',
+        'epg',
+        'episode',
+        'live',
+        'marvel',
+        'movie',
+        'player',
+        'series',
+        'settings'
       ]
     > &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.DefaultTo<'movie'>;
   };
 }
 

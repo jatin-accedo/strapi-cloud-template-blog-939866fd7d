@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_available_ons",
   "info": {
-    "displayName": "Available on"
+    "displayName": "Available on",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,7 +21,8 @@
         "tvOS",
         "Web",
         "Xbox"
-      ]
+      ],
+      "default": "iOS"
     }
   }
 }
