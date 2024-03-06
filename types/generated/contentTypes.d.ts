@@ -362,6 +362,191 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiContainerContainer extends Schema.CollectionType {
+  collectionName: 'containers';
+  info: {
+    singularName: 'container';
+    pluralName: 'containers';
+    displayName: 'Container';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Template: Attribute.Component<'shared.template', true>;
+    DisplayText: Attribute.String;
+    Items: Attribute.Relation<
+      'api::container.container',
+      'manyToMany',
+      'api::content-item.content-item'
+    >;
+    Pages: Attribute.Relation<
+      'api::container.container',
+      'manyToMany',
+      'api::page.page'
+    >;
+    Club: Attribute.Enumeration<
+      [
+        'adelaide_crows',
+        'brisbane',
+        'carlton',
+        'collingwood',
+        'essendon',
+        'fremantle',
+        'geelong',
+        'gold_coast_suns',
+        'gws_giants',
+        'hawthorn',
+        'melbourne',
+        'north_melbourne',
+        'port_adelaide',
+        'richmond',
+        'st_kilda',
+        'sydney_swans',
+        'west_coast_eagles',
+        'western_bulldogs',
+        'all'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::container.container',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::container.container',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContentItemContentItem extends Schema.CollectionType {
+  collectionName: 'content_items';
+  info: {
+    singularName: 'content-item';
+    pluralName: 'content-items';
+    displayName: 'ContentItem';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Template: Attribute.Component<'shared.template', true>;
+    Image: Attribute.Component<'shared.media', true>;
+    Action: Attribute.String;
+    ActionData: Attribute.String;
+    DisplayText: Attribute.String;
+    Containers: Attribute.Relation<
+      'api::content-item.content-item',
+      'manyToMany',
+      'api::container.container'
+    >;
+    Club: Attribute.Enumeration<
+      [
+        'adelaide_crows',
+        'brisbane',
+        'carlton',
+        'collingwood',
+        'essendon',
+        'fremantle',
+        'geelong',
+        'gold_coast_suns',
+        'gws_giants',
+        'hawthorn',
+        'melbourne',
+        'north_melbourne',
+        'port_adelaide',
+        'richmond',
+        'st_kilda',
+        'sydney_swans',
+        'west_coast_eagles',
+        'western_bulldogs'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::content-item.content-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::content-item.content-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Template: Attribute.Component<'shared.template', true>;
+    DisplayText: Attribute.String;
+    Containers: Attribute.Relation<
+      'api::page.page',
+      'manyToMany',
+      'api::container.container'
+    >;
+    Club: Attribute.Enumeration<
+      [
+        'adelaide_crows',
+        'brisbane',
+        'carlton',
+        'collingwood',
+        'essendon',
+        'fremantle',
+        'geelong',
+        'gold_coast_suns',
+        'gws_giants',
+        'hawthorn',
+        'melbourne',
+        'north_melbourne',
+        'port_adelaide',
+        'richmond',
+        'st_kilda',
+        'sydney_swans',
+        'west_coast_eagles',
+        'western_bulldogs'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -737,7 +922,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -765,6 +949,28 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    Club: Attribute.Enumeration<
+      [
+        'adelaide_crows',
+        'brisbane',
+        'carlton',
+        'collingwood',
+        'essendon',
+        'fremantle',
+        'geelong',
+        'gold_coast_suns',
+        'gws_giants',
+        'hawthorn',
+        'melbourne',
+        'north_melbourne',
+        'port_adelaide',
+        'richmond',
+        'st_kilda',
+        'sydney_swans',
+        'west_coast_eagles',
+        'western_bulldogs'
+      ]
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -881,122 +1087,6 @@ export interface PluginMenusMenuItem extends Schema.CollectionType {
   };
 }
 
-export interface ApiContainerContainer extends Schema.CollectionType {
-  collectionName: 'containers';
-  info: {
-    singularName: 'container';
-    pluralName: 'containers';
-    displayName: 'Container';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.String;
-    Template: Attribute.Component<'shared.template', true>;
-    DisplayText: Attribute.String;
-    ContentItem: Attribute.Relation<
-      'api::container.container',
-      'manyToMany',
-      'api::content-item.content-item'
-    >;
-    Pages: Attribute.Relation<
-      'api::container.container',
-      'manyToMany',
-      'api::page.page'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::container.container',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::container.container',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiContentItemContentItem extends Schema.CollectionType {
-  collectionName: 'content_items';
-  info: {
-    singularName: 'content-item';
-    pluralName: 'content-items';
-    displayName: 'ContentItem';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.String;
-    Template: Attribute.Component<'shared.template', true>;
-    Image: Attribute.Component<'shared.media', true>;
-    Action: Attribute.String;
-    ActionData: Attribute.String;
-    DisplayText: Attribute.String;
-    Containers: Attribute.Relation<
-      'api::content-item.content-item',
-      'manyToMany',
-      'api::container.container'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::content-item.content-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::content-item.content-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPagePage extends Schema.CollectionType {
-  collectionName: 'pages';
-  info: {
-    singularName: 'page';
-    pluralName: 'pages';
-    displayName: 'Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Template: Attribute.Component<'shared.template', true>;
-    DisplayText: Attribute.String;
-    Containers: Attribute.Relation<
-      'api::page.page',
-      'manyToMany',
-      'api::container.container'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1007,6 +1097,9 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::container.container': ApiContainerContainer;
+      'api::content-item.content-item': ApiContentItemContentItem;
+      'api::page.page': ApiPagePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1017,9 +1110,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::menus.menu': PluginMenusMenu;
       'plugin::menus.menu-item': PluginMenusMenuItem;
-      'api::container.container': ApiContainerContainer;
-      'api::content-item.content-item': ApiContentItemContentItem;
-      'api::page.page': ApiPagePage;
     }
   }
 }
