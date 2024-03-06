@@ -27,6 +27,40 @@ export interface SharedAvailableOn extends Schema.Component {
   };
 }
 
+export interface SharedClubs extends Schema.Component {
+  collectionName: 'components_shared_clubs';
+  info: {
+    displayName: 'Clubs';
+    description: '';
+  };
+  attributes: {
+    Clubs: Attribute.Enumeration<
+      [
+        'all',
+        'adelaide_crows',
+        'brisbane',
+        'carlton',
+        'collingwood',
+        'essendon',
+        'fremantle',
+        'geelong',
+        'gold_coast_suns',
+        'gws_giants',
+        'hawthorn',
+        'melbourne',
+        'north_melbourne',
+        'port_adelaide',
+        'richmond',
+        'st_kilda',
+        'sydney_swans',
+        'west_coast_eagles',
+        'western_bulldogs'
+      ]
+    > &
+      Attribute.DefaultTo<'all'>;
+  };
+}
+
 export interface SharedItem extends Schema.Component {
   collectionName: 'components_shared_items';
   info: {
@@ -150,6 +184,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.available-on': SharedAvailableOn;
+      'shared.clubs': SharedClubs;
       'shared.item': SharedItem;
       'shared.logo': SharedLogo;
       'shared.media': SharedMedia;

@@ -388,30 +388,7 @@ export interface ApiContainerContainer extends Schema.CollectionType {
       'manyToMany',
       'api::page.page'
     >;
-    Club: Attribute.Enumeration<
-      [
-        'adelaide_crows',
-        'brisbane',
-        'carlton',
-        'collingwood',
-        'essendon',
-        'fremantle',
-        'geelong',
-        'gold_coast_suns',
-        'gws_giants',
-        'hawthorn',
-        'melbourne',
-        'north_melbourne',
-        'port_adelaide',
-        'richmond',
-        'st_kilda',
-        'sydney_swans',
-        'west_coast_eagles',
-        'western_bulldogs',
-        'all'
-      ]
-    > &
-      Attribute.Required;
+    Club: Attribute.Component<'shared.clubs'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -454,28 +431,7 @@ export interface ApiContentItemContentItem extends Schema.CollectionType {
       'manyToMany',
       'api::container.container'
     >;
-    Club: Attribute.Enumeration<
-      [
-        'adelaide_crows',
-        'brisbane',
-        'carlton',
-        'collingwood',
-        'essendon',
-        'fremantle',
-        'geelong',
-        'gold_coast_suns',
-        'gws_giants',
-        'hawthorn',
-        'melbourne',
-        'north_melbourne',
-        'port_adelaide',
-        'richmond',
-        'st_kilda',
-        'sydney_swans',
-        'west_coast_eagles',
-        'western_bulldogs'
-      ]
-    >;
+    Club: Attribute.Component<'shared.clubs'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -514,29 +470,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       'manyToMany',
       'api::container.container'
     >;
-    Club: Attribute.Enumeration<
-      [
-        'adelaide_crows',
-        'brisbane',
-        'carlton',
-        'collingwood',
-        'essendon',
-        'fremantle',
-        'geelong',
-        'gold_coast_suns',
-        'gws_giants',
-        'hawthorn',
-        'melbourne',
-        'north_melbourne',
-        'port_adelaide',
-        'richmond',
-        'st_kilda',
-        'sydney_swans',
-        'west_coast_eagles',
-        'western_bulldogs'
-      ]
-    > &
-      Attribute.Required;
+    Club: Attribute.Component<'shared.clubs'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -950,28 +884,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    Club: Attribute.Enumeration<
-      [
-        'adelaide_crows',
-        'brisbane',
-        'carlton',
-        'collingwood',
-        'essendon',
-        'fremantle',
-        'geelong',
-        'gold_coast_suns',
-        'gws_giants',
-        'hawthorn',
-        'melbourne',
-        'north_melbourne',
-        'port_adelaide',
-        'richmond',
-        'st_kilda',
-        'sydney_swans',
-        'west_coast_eagles',
-        'western_bulldogs'
-      ]
-    >;
+    Club: Attribute.Component<'shared.clubs'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
