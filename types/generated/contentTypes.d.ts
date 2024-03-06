@@ -378,7 +378,7 @@ export interface ApiContainerContainer extends Schema.CollectionType {
     Subtitle: Attribute.String;
     Template: Attribute.Component<'shared.template', true>;
     DisplayText: Attribute.String;
-    Items: Attribute.Relation<
+    ContentItem: Attribute.Relation<
       'api::container.container',
       'manyToMany',
       'api::content-item.content-item'
