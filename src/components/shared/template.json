@@ -9,10 +9,10 @@
     "template": {
       "type": "enumeration",
       "enum": [
-        "channel",
         "default",
-        "elevate-category",
+        "carousel-wide",
         "elevate-carousel-wide",
+        "elevate-category",
         "elevate-epg",
         "elevate-hero-banner",
         "elevate-info",
@@ -26,6 +26,7 @@
         "elevate-show-detail",
         "elevate-sign-in",
         "elevate-view-all",
+        "channel",
         "epg",
         "episode",
         "live",

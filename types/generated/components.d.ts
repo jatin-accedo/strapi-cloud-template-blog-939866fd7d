@@ -148,10 +148,10 @@ export interface SharedTemplate extends Schema.Component {
   attributes: {
     template: Attribute.Enumeration<
       [
-        'channel',
         'default',
-        'elevate-category',
+        'carousel-wide',
         'elevate-carousel-wide',
+        'elevate-category',
         'elevate-epg',
         'elevate-hero-banner',
         'elevate-info',
@@ -165,6 +165,7 @@ export interface SharedTemplate extends Schema.Component {
         'elevate-show-detail',
         'elevate-sign-in',
         'elevate-view-all',
+        'channel',
         'epg',
         'episode',
         'live',
