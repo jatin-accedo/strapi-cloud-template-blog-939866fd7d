@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ad_banners",
+  "info": {
+    "singularName": "ad-banner",
+    "pluralName": "ad-banners",
+    "displayName": "AdBanner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "BannerImage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "inversedBy": "ad_banners"
+    },
+    "BannerTemplate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.template"
+    }
+  }
+}

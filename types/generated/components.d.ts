@@ -173,7 +173,9 @@ export interface SharedTemplate extends Schema.Component {
         'movie',
         'player',
         'series',
-        'settings'
+        'settings',
+        'banner-width-full',
+        'banner-small'
       ]
     > &
       Attribute.Required &
