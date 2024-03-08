@@ -34,12 +34,6 @@
       "repeatable": false,
       "component": "shared.clubs",
       "required": true
-    },
-    "ad_banners": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::ad-banner.ad-banner",
-      "mappedBy": "pages"
     }
   }
 }

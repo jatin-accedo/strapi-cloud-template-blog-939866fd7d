@@ -362,45 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdBannerAdBanner extends Schema.CollectionType {
-  collectionName: 'ad_banners';
-  info: {
-    singularName: 'ad-banner';
-    pluralName: 'ad-banners';
-    displayName: 'AdBanner';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    BannerImage: Attribute.Component<'shared.media', true>;
-    Link: Attribute.String;
-    pages: Attribute.Relation<
-      'api::ad-banner.ad-banner',
-      'manyToMany',
-      'api::page.page'
-    >;
-    BannerTemplate: Attribute.Component<'shared.template'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ad-banner.ad-banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ad-banner.ad-banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiContainerContainer extends Schema.CollectionType {
   collectionName: 'containers';
   info: {
@@ -510,11 +471,6 @@ export interface ApiPagePage extends Schema.CollectionType {
       'api::container.container'
     >;
     Club: Attribute.Component<'shared.clubs'> & Attribute.Required;
-    ad_banners: Attribute.Relation<
-      'api::page.page',
-      'manyToMany',
-      'api::ad-banner.ad-banner'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1093,7 +1049,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::ad-banner.ad-banner': ApiAdBannerAdBanner;
       'api::container.container': ApiContainerContainer;
       'api::content-item.content-item': ApiContentItemContentItem;
       'api::page.page': ApiPagePage;

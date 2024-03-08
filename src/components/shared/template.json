@@ -11,6 +11,7 @@
       "enum": [
         "default",
         "carousel-wide",
+        "elevate-carousel-full-width",
         "elevate-carousel-wide",
         "elevate-category",
         "elevate-epg",
@@ -34,9 +35,7 @@
         "movie",
         "player",
         "series",
-        "settings",
-        "banner-width-full",
-        "banner-small"
+        "settings"
       ],
       "required": true,
       "default": "movie"

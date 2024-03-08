@@ -150,6 +150,7 @@ export interface SharedTemplate extends Schema.Component {
       [
         'default',
         'carousel-wide',
+        'elevate-carousel-full-width',
         'elevate-carousel-wide',
         'elevate-category',
         'elevate-epg',
@@ -173,9 +174,7 @@ export interface SharedTemplate extends Schema.Component {
         'movie',
         'player',
         'series',
-        'settings',
-        'banner-width-full',
-        'banner-small'
+        'settings'
       ]
     > &
       Attribute.Required &
