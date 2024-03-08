@@ -174,33 +174,12 @@ export interface SharedTemplate extends Schema.Component {
         'movie',
         'player',
         'series',
-        'settings'
+        'settings',
+        'team'
       ]
     > &
       Attribute.Required &
       Attribute.DefaultTo<'movie'>;
-    Team: Attribute.Enumeration<
-      [
-        'Adelaide Crows',
-        'Brisbane',
-        'Carlton',
-        'Collingwood',
-        'Essendon',
-        'Fremantle',
-        'Geelong',
-        'Gold Coast Suns',
-        'GWS Giants',
-        'Hawthorn',
-        'Melbourne',
-        'North Melbourne',
-        'Port Adelaide',
-        'Richmond',
-        'St Kilda',
-        'Sydney Swans',
-        'West Coast Eagles',
-        'Western Bulldogs'
-      ]
-    >;
   };
 }
 

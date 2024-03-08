@@ -35,33 +35,11 @@
         "movie",
         "player",
         "series",
-        "settings"
+        "settings",
+        "team"
       ],
       "required": true,
       "default": "movie"
-    },
-    "Team": {
-      "type": "enumeration",
-      "enum": [
-        "Adelaide Crows",
-        "Brisbane",
-        "Carlton",
-        "Collingwood",
-        "Essendon",
-        "Fremantle",
-        "Geelong",
-        "Gold Coast Suns",
-        "GWS Giants",
-        "Hawthorn",
-        "Melbourne",
-        "North Melbourne",
-        "Port Adelaide",
-        "Richmond",
-        "St Kilda",
-        "Sydney Swans",
-        "West Coast Eagles",
-        "Western Bulldogs"
-      ]
     }
   }
 }
