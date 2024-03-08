@@ -139,6 +139,38 @@ export interface SharedSlider extends Schema.Component {
   };
 }
 
+export interface SharedTeams extends Schema.Component {
+  collectionName: 'components_shared_teams';
+  info: {
+    displayName: 'Teams';
+    description: '';
+  };
+  attributes: {
+    Teams: Attribute.Enumeration<
+      [
+        'Adelaide Crows',
+        'Brisbane',
+        'Carlton',
+        'Collingwood',
+        'Essendon',
+        'Fremantle',
+        'Geelong',
+        'Gold Coast Suns',
+        'GWS Giants',
+        'Hawthorn',
+        'Melbourne',
+        'North Melbourne',
+        'Port Adelaide',
+        'Richmond',
+        'St Kilda',
+        'Sydney Swans',
+        'West Coast Eagles',
+        'Western Bulldogs'
+      ]
+    >;
+  };
+}
+
 export interface SharedTemplate extends Schema.Component {
   collectionName: 'components_shared_templates';
   info: {
@@ -193,6 +225,7 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.teams': SharedTeams;
       'shared.template': SharedTemplate;
     }
   }

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_teams",
+  "info": {
+    "displayName": "Teams",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Teams": {
+      "type": "enumeration",
+      "enum": [
+        "Adelaide Crows",
+        "Brisbane",
+        "Carlton",
+        "Collingwood",
+        "Essendon",
+        "Fremantle",
+        "Geelong",
+        "Gold Coast Suns",
+        "GWS Giants",
+        "Hawthorn",
+        "Melbourne",
+        "North Melbourne",
+        "Port Adelaide",
+        "Richmond",
+        "St Kilda",
+        "Sydney Swans",
+        "West Coast Eagles",
+        "Western Bulldogs"
+      ]
+    }
+  }
+}
