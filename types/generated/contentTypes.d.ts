@@ -432,6 +432,7 @@ export interface ApiContentItemContentItem extends Schema.CollectionType {
       'api::container.container'
     >;
     Club: Attribute.Component<'shared.clubs'>;
+    actiondata: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
