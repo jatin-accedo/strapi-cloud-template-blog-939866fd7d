@@ -4,7 +4,7 @@
     "@strapi/plugin-color-picker": "^4.20.3",
     "@strapi/plugin-graphql": "^4.0.5",
     "@strapi/plugin-i18n": "4.20.2",
-    "@strapi/plugin-users-permissions": "4.20.2",
+    "@strapi/plugin-users-permissions": "4.24.2",
     "@strapi/strapi": "4.20.2",
     "@webbio/strapi-plugin-scheduler": "^1.0.6",
     "better-sqlite3": "8.6.0",
